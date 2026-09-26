@@ -1,0 +1,16 @@
+{
+  "title": "Pull Back — Crystals World",
+  "vector": "The camera only ever pulls back: from inside one amethyst point to the storefront on Guadalupe.",
+  "clips": [
+    {"id": "c1-stone-to-palm", "from": "KF1", "to": "KF2", "seconds": 5,
+     "prompt": "One continuous slow backward dolly. The camera pulls back from deep inside the amethyst point: violet facets and inner veils recede, and the whole crystal point resolves, resting in an open cupped palm. The same warm key light from upper left throughout. One unbroken move, no cuts."},
+    {"id": "c2-palm-to-counter", "from": "KF2", "to": "KF3", "seconds": 5,
+     "prompt": "Continuing the same slow backward dolly, the camera keeps pulling back: the palm becomes two cupped hands holding the amethyst point above a glass counter, wrists and charcoal sleeves appearing at the frame edges, glass cases softly out of focus behind. Lighting unchanged. One unbroken move, no cuts."},
+    {"id": "c3-counter-to-aisle", "from": "KF3", "to": "KF4", "seconds": 5,
+     "prompt": "Continuing the same slow backward dolly, the camera pulls back away from the counter along the aisle: the hands grow small at frame centre while white shelves and glass cases of amethyst, clear quartz and citrine clusters slide past on both sides. Constant warm-white shop lighting. One unbroken move, no cuts."},
+    {"id": "c4-aisle-to-door", "from": "KF4", "to": "KF5", "seconds": 5,
+     "prompt": "Continuing the same slow backward dolly, the camera keeps pulling back through the length of the shop to the front door: the aisle recedes, the dark frame of the glass door appears at the edges of the shot, and a faint purple glow from the sign above spills on the door frame. Interior lighting unchanged. One unbroken move, no cuts."},
+    {"id": "c5-door-to-street", "from": "KF5", "to": "KF6", "seconds": 5,
+     "prompt": "Continuing the same slow backward dolly, the camera pulls back out through the open glass door onto the night sidewalk and keeps retreating to reveal the whole storefront under the glowing purple sign, the lit shop visible through the windows. Steady, one unbroken move, no cuts."}
+  ]
+}
