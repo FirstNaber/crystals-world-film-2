@@ -61,7 +61,7 @@ header.top.lit nav.main a.pill:hover{background:var(--ink);color:var(--paper);bo
 @media(max-width:820px){nav.main a:not(.pill){display:none}.brand span{display:none}}
 
 /* the film */
-#film{position:relative;height:640vh}
+#film{position:relative;height:420vh}
 #stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--night)}
 #stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 #stage .shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,rgba(8,5,4,.72) 0%,rgba(8,5,4,0) 42%),linear-gradient(to bottom,rgba(8,5,4,.5) 0%,rgba(8,5,4,0) 22%)}
@@ -93,7 +93,7 @@ header.top.lit nav.main a.pill:hover{background:var(--ink);color:var(--paper);bo
 .finale{position:absolute;z-index:5;right:clamp(30px,5vw,70px);top:50%;transform:translateY(-50%);text-align:right;color:var(--glass);opacity:0;pointer-events:none;max-width:560px}
 .finale.live{pointer-events:auto}
 .finale h2{font-family:var(--serif);font-weight:400;font-size:clamp(3rem,6.6vw,6.4rem);line-height:.92;letter-spacing:-.02em;text-shadow:0 2px 40px rgba(0,0,0,.4)}
-.finale h2 em{color:#f3c07a}
+.finale h2 em{color:#cdb0ff}
 .finale .ctas{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap;margin-top:30px}
 @media(max-width:700px){.finale{left:24px;right:24px;text-align:left;top:36%}.finale .ctas{justify-content:flex-start}}
 
@@ -110,7 +110,7 @@ header.top.lit nav.main a.pill:hover{background:var(--ink);color:var(--paper);bo
 
 /* ─── the lit room ─── */
 main.room{position:relative;z-index:2;background:var(--paper)}
-.dawn{height:46vh;background:linear-gradient(to bottom,var(--night) 0%,#2a1d14 30%,#8f7a63 64%,var(--paper) 100%)}
+.dawn{height:46vh;background:linear-gradient(to bottom,var(--night) 0%,#211530 30%,#8e82a3 64%,var(--paper) 100%)}
 .sec{position:relative;min-height:min(92vh,900px);padding:clamp(80px,11vw,150px) var(--pad);display:flex;align-items:center}
 .wrap{width:100%;max-width:1340px;margin:0 auto}
 .sec .wrap>*{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
@@ -218,7 +218,7 @@ footer small{display:block;margin-top:40px;font-size:11px;letter-spacing:.05em;c
 
 <section id="film" aria-label="Crystals World">
   <div id="stage">
-    <canvas id="cv" role="img" aria-label="Amethyst, clear quartz and citrine crystals in warm light"></canvas>
+    <canvas id="cv" role="img" aria-label="A close-up of an amethyst cluster in soft light"></canvas>
     <div class="shade"></div>
 
     <div class="open" id="top">
@@ -232,11 +232,11 @@ footer small{display:block;margin-top:40px;font-size:11px;letter-spacing:.05em;c
         <span class="no swap">I</span>
         <span class="name swap">Amethyst</span>
         <span class="spec mono swap">SiO₂ · Hardness 7</span>
-        <span class="line swap">Violet quartz, from hand-sized points to geodes you need two people to carry.</span>
+        <span class="line swap">Violet quartz, in points, clusters, geodes and hearts.</span>
       </div>
     </div>
 
-    <div class="index mono" aria-hidden="true"><span class="on">I Amethyst<i></i></span><span>II Quartz<i></i></span><span>III Citrine<i></i></span></div>
+    <div class="index mono" aria-hidden="true"><span class="on">I Amethyst<i></i></span><span>II Colour<i></i></span><span>III In the shop<i></i></span></div>
 
     <div class="finale">
       <h2>Come find<br>something <em>you didn’t know</em> you were looking for.</h2>
@@ -352,19 +352,19 @@ footer small{display:block;margin-top:40px;font-size:11px;letter-spacing:.05em;c
 <script>
 (() => {
   'use strict';
-  const FRAME_COUNT = 361;   // every native frame of the 15s film, transition softened
+  const FRAME_COUNT = 100;   // amethyst only: the push-in over the cluster, before the light turns toward quartz
   // Big screens (ultrawide, 4K, large retina) get the 3200px set upscaled from 4K; everything else the 1920px set.
   const BIG = Math.max(screen.width, innerWidth) * Math.min(devicePixelRatio || 1, 1.5) > 2200;
   const SET = BIG ? 'x' : 'd';
   const frameURL = (i) => `frames/${SET}/${String(i + 1).padStart(4, '0')}.jpg`;
   // chapter labels: [film progress where it begins, numeral, name, spec line, one line]
   const CH = [
-    [0.00, 'I',   'Amethyst',     'SiO₂ · Hardness 7', 'Violet quartz, from hand-sized points to geodes you need two people to carry.'],
-    [0.40, 'II',  'Clear quartz', 'SiO₂ · Hardness 7', 'Water-clear points and clusters, the most versatile stone on the shelf.'],
-    [0.78, 'III', 'Citrine',      'SiO₂ · Brazil',     'Honey-gold quartz, straight from Brazil to Guadalupe Street.'],
+    [0.00, 'I',   'Amethyst',    'SiO₂ · Hardness 7',        'Violet quartz, in points, clusters, geodes and hearts.'],
+    [0.36, 'II',  'The colour',  'Iron · natural radiation', 'Trace iron and natural radiation turn clear quartz violet. No two pieces share a shade.'],
+    [0.70, 'III', 'In the shop', '3202 Guadalupe St',        'Clusters, geodes and druzy hearts on stands, one of a kind and ready for pickup.'],
   ];
   // on a narrow viewport the film is cropped hard: keep the crystal in frame
-  const FOCUS = [[0, .74], [.12, .66], [.3, .6], [.42, .5], [.7, .5], [.82, .42], [1, .4]];
+  const FOCUS = [[0, .74], [.4, .62], [1, .56]];
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const JUMP = new URLSearchParams(location.search).get('jump');
