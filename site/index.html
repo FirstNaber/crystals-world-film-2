@@ -11,7 +11,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ranchers&family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Store","name":"Crystals World","description":"Crystal and mineral shop in Austin, Texas. Retail and wholesale.","telephone":"+1-737-320-8079","address":{"@type":"PostalAddress","streetAddress":"3202 Guadalupe St Ste C","addressLocality":"Austin","addressRegion":"TX","postalCode":"78705","addressCountry":"US"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"203"},"sameAs":["https://www.instagram.com/crystals_world01/","https://www.tiktok.com/@crystals_world01","https://www.facebook.com/share/19NQg3GGVh/"]}
 </script>
@@ -49,7 +49,7 @@ header.top{position:fixed;left:14px;right:14px;top:14px;z-index:40;display:flex;
 header.top.lit{background:rgba(239,232,220,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:var(--ink);border-color:var(--rule)}
 .brand{display:flex;align-items:baseline;gap:10px;text-shadow:0 1px 18px rgba(0,0,0,.45)}
 header.top.lit .brand{text-shadow:none}
-.brand b{font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.01em;line-height:1}
+.brand b{font-family:"Ranchers",Impact,sans-serif;font-weight:400;font-size:24px;letter-spacing:.015em;line-height:1;text-transform:uppercase}
 .brand span{opacity:.7}
 nav.main{display:flex;gap:28px;align-items:center}
 nav.main a{font-size:13px;font-weight:500;text-shadow:0 1px 14px rgba(0,0,0,.5)}
@@ -68,8 +68,9 @@ header.top.lit nav.main a.pill:hover{background:var(--ink);color:var(--paper);bo
 
 /* opening wordmark, centred and huge */
 .open{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--glass);pointer-events:none;will-change:opacity,transform}
-.open h1{font-family:var(--serif);font-weight:400;font-size:clamp(4.2rem,15vw,15rem);line-height:.82;letter-spacing:-.03em;text-shadow:0 4px 60px rgba(0,0,0,.45)}
-.open h1 em{display:block}
+/* the wordmark, set like the shop's sign: heavy condensed letters in violet, glowing warm from behind */
+.open h1{font-family:"Ranchers",Impact,sans-serif;font-weight:400;font-size:clamp(3.8rem,12.5vw,12.5rem);line-height:.9;letter-spacing:.01em;text-transform:uppercase;color:#8d55ff;text-shadow:.04em .05em 0 #1a0b3a,0 0 .5em rgba(236,255,150,.28),0 0 1.4em rgba(236,255,150,.16)}
+.open h1 em{display:block;font-style:normal}
 .open p{margin-top:26px;color:rgba(244,241,236,.8)}
 
 /* the specimen label: bottom-left, rewrites itself per chapter */
@@ -188,7 +189,8 @@ main.room{position:relative;z-index:2;background:var(--paper)}
 
 footer.foot{background:var(--ink);color:rgba(239,232,220,.7);padding:clamp(60px,8vw,110px) var(--pad) 40px}
 footer .big{font-family:var(--serif);font-size:clamp(3.4rem,11vw,11rem);line-height:.85;letter-spacing:-.03em;color:var(--paper)}
-footer .big em{color:#f3c07a}
+footer .big .sign{font-family:"Ranchers",Impact,sans-serif;letter-spacing:.01em;text-transform:uppercase;color:#a47bff}
+footer .big em{color:#cdb0ff}
 footer .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:60px;padding-top:26px;border-top:1px solid rgba(239,232,220,.18);font-size:14px;line-height:1.7}
 footer .soc{display:flex;gap:12px}
 footer .soc a{width:42px;height:42px;border:1px solid rgba(239,232,220,.25);border-radius:50%;display:grid;place-items:center;transition:border-color .3s,color .3s}
@@ -209,7 +211,6 @@ footer small{display:block;margin-top:40px;font-size:11px;letter-spacing:.05em;c
 <header class="top">
   <a class="brand" href="#top" aria-label="Crystals World, back to top"><b>Crystals World</b><span class="mono">Austin · TX</span></a>
   <nav class="main" aria-label="Primary">
-    <a href="#stones">The stones</a>
     <a href="#pieces">Pieces</a>
     <a href="#reviews">Reviews</a>
     <a class="pill" href="#visit">Visit</a>
@@ -250,23 +251,9 @@ footer small{display:block;margin-top:40px;font-size:11px;letter-spacing:.05em;c
 
 <main class="room" id="room">
   <div class="dawn" aria-hidden="true"></div>
-
-  <section class="sec" id="stones" aria-labelledby="stones-h">
-    <div class="wrap">
-      <p class="kicker mono"><b>01</b> The stones</p>
-      <h2 class="h1" id="stones-h">Three colours.<br><em>One mineral.</em></h2>
-      <p class="body">Amethyst, clear quartz and citrine are all quartz: silicon dioxide, hardness 7. Trace iron and natural radiation are the difference between violet, water-clear and honey-gold.</p>
-      <div class="trio">
-        <div><div class="sw" style="background:linear-gradient(135deg,#2a0f47,#7d4bc2 55%,#d8c3f5)"></div><b>Amethyst</b><p>The violet one. Clusters, geodes and druzy hearts on stands.</p></div>
-        <div><div class="sw" style="background:linear-gradient(135deg,#1c2229,#bcc4cb 50%,#f7f7f5)"></div><b>Clear quartz</b><p>The water-clear one. Single points, clusters and polished towers.</p></div>
-        <div><div class="sw" style="background:linear-gradient(135deg,#3b1d05,#c7801f 55%,#f6d18e)"></div><b>Citrine</b><p>The honey one. Ours arrive from Brazil, as clusters and hearts.</p></div>
-      </div>
-    </div>
-  </section>
-
   <section class="sec" id="pieces" aria-labelledby="pieces-h" style="align-items:flex-start">
     <div class="wrap">
-      <p class="kicker mono"><b>02</b> On the shelves now</p>
+      <p class="kicker mono"><b>01</b> On the shelves now</p>
       <h2 class="h2" id="pieces-h">Every large piece<br><em>is the only one.</em></h2>
       <div class="plates">
         <a class="plate" href="#visit"><figure><img src="img/amethyst-heart.jpg" alt="An amethyst druzy heart on a black stand" loading="lazy"></figure><figcaption><b>Amethyst heart</b><span class="mono">No. 014<br>Druzy · on stand</span></figcaption></a>
@@ -282,7 +269,7 @@ footer small{display:block;margin-top:40px;font-size:11px;letter-spacing:.05em;c
   <section class="sec rep" id="reviews" aria-labelledby="rep-h">
     <div class="wrap grid">
       <div>
-        <p class="kicker mono"><b>03</b> On Google</p>
+        <p class="kicker mono"><b>02</b> On Google</p>
         <p class="n" id="rep-h" aria-label="Rated 5.0 from 203 Google reviews">5.0</p>
         <p class="mono" style="margin-top:22px;color:#f3c07a;letter-spacing:.2em">★★★★★ &nbsp;203 Google reviews</p>
       </div>
@@ -297,7 +284,7 @@ footer small{display:block;margin-top:40px;font-size:11px;letter-spacing:.05em;c
   <section class="sec visit" id="visit" aria-labelledby="visit-h">
     <div class="wrap grid">
       <div>
-        <p class="kicker mono"><b>04</b> Visit</p>
+        <p class="kicker mono"><b>03</b> Visit</p>
         <h2 class="addr" id="visit-h">3202 Guadalupe St,<br>Suite C. <em>Under the purple sign.</em></h2>
         <dl class="rows">
           <div><dt class="mono">City</dt><dd>Austin, TX 78705</dd></div>
@@ -321,7 +308,7 @@ footer small{display:block;margin-top:40px;font-size:11px;letter-spacing:.05em;c
   <section class="sec feed" aria-labelledby="feed-h">
     <div class="wrap">
       <div class="top">
-        <div><p class="kicker mono"><b>05</b> @crystals_world01</p><h2 class="h2" id="feed-h">New arrivals,<br><em>filmed first.</em></h2></div>
+        <div><p class="kicker mono"><b>04</b> @crystals_world01</p><h2 class="h2" id="feed-h">New arrivals,<br><em>filmed first.</em></h2></div>
         <dl class="nums"><div><dd><b>40.7K</b></dd><dt class="mono">Followers</dt></div><div><dd><b>476K</b></dd><dt class="mono">Likes</dt></div><div><dd><b>447</b></dd><dt class="mono">Videos</dt></div></dl>
       </div>
       <div class="tiles">
@@ -335,7 +322,7 @@ footer small{display:block;margin-top:40px;font-size:11px;letter-spacing:.05em;c
   </section>
 
   <footer class="foot">
-    <p class="big">Crystals World<br><em>on Guadalupe.</em></p>
+    <p class="big"><span class="sign">Crystals World</span><br><em>on Guadalupe.</em></p>
     <div class="cols">
       <div>3202 Guadalupe St Ste C<br>Austin, TX 78705<br><a href="tel:+17373208079">(737) 320-8079</a></div>
       <div>Retail &amp; wholesale crystals, minerals, gemstones and jewelry.</div>
